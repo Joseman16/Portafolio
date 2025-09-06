@@ -1,0 +1,162 @@
+.principal{
+    background-color:#f59517e5 ;
+}
+
+.cabezera{
+    display: flex;
+    flex-direction: row;
+    background-color: #000000fb;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+#nomUsuario{
+    padding-left: 5px;
+}
+
+#icoCabezera{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#listaCabezera{
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+}
+
+#lis{
+    margin: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 30px;
+}
+
+#lis:hover{
+    background: #c7a450;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.mainCuerpo{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.imagen:hover {
+  filter: saturate(180%);
+}
+
+.imagenIco{
+    width: 60px;
+}
+.imagenIco:hover {
+    transform: scale(1.05);
+}
+
+.datosPersonales{
+    background-color:#f0b465e5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+}
+
+#imgProfile{
+    background-color: black;
+    color: aliceblue;
+    padding: 60px;
+    border-radius: 20px;
+    border: 10px;
+    border-color: black;
+    margin: 15px;
+}
+
+#sobreMi{
+    padding: 80px;
+}
+
+.misProyectos{
+    display: flex;
+    flex-direction: row;
+    background-color: #f0b465e5;
+    margin-top: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+#icoProyecto{
+    display: flex;
+    flex-direction: row;
+    margin-right: 1000px;
+    background-color: black;
+    color: aliceblue;
+    justify-content: start;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.linkProyectos{
+    background-color: #000000;
+    margin-top: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    color: aliceblue;
+    margin: 10px;
+    padding: 30px;
+    justify-content: space-around;
+}
+#links{
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.conteProyecto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.habilidadesBlandasSection{
+    display: flex;
+    flex-direction: column;
+    background-color: #f0b465e5;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.habilidadesBlandas{
+    display: flex;
+    flex-direction: row;
+    background-color: #f0b465e5;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    justify-content: space-around;
+}
+
+#habilidad{
+    display: flex;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgb(255, 85, 6);
+}
+
+#habilidad:hover{
+    background: #af9149;
+    transform: scale(1.05);
+    cursor: pointer;
+}
