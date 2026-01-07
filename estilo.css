@@ -1,27 +1,37 @@
-principal {
-    background-color: #f0f0f0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin: 0;
-    padding: 0;
+*{
+    margin: 0;  /*Evita espacios inesperados entre elementos*/
+    padding: 0;  /*Elimina rellenos internos automáticos*/
+    box-sizing: border-box; /*Evita desbordes en pantallas pequeñas*/
 }
 
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%; /*Permite que el sitio use todo el ancho del dispositivo*/
+    min-height: 100vh; /*Asegura que el body ocupe toda la pantalla*/
+    background-color: #000000;
+    line-height: 1.6; /*Mejora la lectura de textos largos*/
+}
+
+
+/*Encabezado o header*/
 .encabezado{
-    background-color: black;
-    border-radius: 8px;
-    margin: 2px;
-    padding: auto 8px;
     display: flex;
     flex-direction: row;
+    background-color: black;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #000000 50%, #d8b400 );
+    padding: 15px 30px;
+    /*background: linear-gradient(to right, #000000 50%, #d89400 );*/
+    background: linear-gradient(to right, #020069, #000000, #d89400);
+
 }
 
 .usuario{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    margin-right: 10px;
 
 }
 
@@ -63,10 +73,10 @@ principal {
 .logo {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     margin-right: 5px;
-    margin-left: 10px;
+    margin-left: 15px;
     animation-name: myAnimationLogo;
     animation-duration: 12s;
     animation-iteration-count: infinite;
@@ -79,7 +89,7 @@ principal {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('./img/Logo_JMLC1.webp');
+    background-image: url('./img/Header/logoJMLC1.webp');
 }
 
 #logoPrincipal:hover{
@@ -89,5 +99,120 @@ principal {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('./img/Logo_JMLC2.webp');
+    background-image: url('./img/Header/logoJMLC2.webp');
+}
+
+
+/*Haciendo la pagina responsiva el headewr*/
+
+@media screen and (max-width:900px) {
+    header{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }    
+
+    .menu-navegacion{
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+/*Galeria 3D, inicio de la pagina*/
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@property --translate-z {
+	syntax: '<length>';
+	inherits: false;
+	initial-value: -3000px;
+}
+
+.galeria3D,
+.galeria3D > div {
+	position: absolute;
+	width: 100%;
+	height: 100svh;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	overflow: hidden;
+}
+.title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	font-family: 'Orbitron', 'Courier New', monospace;
+	font-size: clamp(2rem, 8vw, 4rem);
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	text-shadow: 
+		0 0 1rem rgba(0, 0, 0, 0.5),
+		0 0 2rem rgba(0, 0, 0, 0.3),
+		0 0 4rem rgba(0, 0, 0, 0.1);
+	letter-spacing: 0.1em;
+	pointer-events: none;
+}
+
+.img3D {
+	position: absolute;
+	inset-inline: 0;
+	margin: auto;
+	width: 20rem;
+	object-fit: cover;
+	will-change: transform;
+	cursor: pointer;
+	&:nth-of-type(odd) {
+		opacity: 0;
+		left: var(--left);
+		transform: translateZ(var(--translate-z)) translate( calc(-25rem), calc( (var(--i) - ( var(--count) + 1) / 2) * 8rem ) );
+		animation: move var(--duration) linear infinite, opacity var(--duration) linear infinite;    
+		animation-delay: calc( var(--duration) / var(--count) * (var(--i) - 1) - var(--duration) ),
+			calc( var(--duration) / var(--count) * (var(--i) - 1) - var(--duration) );
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
+	&:nth-of-type(even) {
+		opacity: 0;
+		right: var(--right);
+		transform: translateZ(var(--translate-z)) translate(calc(25rem), calc( (var(--i) - ( var(--count) + 1) / 2) * -8rem ) );
+		animation: move var(--duration) linear infinite, opacity var(--duration) linear infinite;    
+		animation-delay: calc( var(--duration) / var(--count) * (var(--i) - 1) - var(--duration) ),
+			calc( var(--duration) / var(--count) * (var(--i) - 1) - var(--duration) );
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
+}
+@keyframes opacity {
+	0% {
+		opacity: 0;
+	}
+	20%,80% {
+		opacity: 1;
+	}
+	90%,100% {
+		opacity: 0;
+	}
+}
+@keyframes move {
+	0% {
+		opacity: 0;
+		--translate-z: -5000px;
+	}
+	100% {
+		--translate-z: 2000px;
+	}
 }
