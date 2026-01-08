@@ -46,15 +46,37 @@ async function obtenerTodosProyectos() {
 async function mostrarTodosProyectos() {
     const proyectos = await obtenerTodosProyectos();
     const lista = document.getElementById("contenedorProyecto");
+
     if (lista) {
-        lista.innerHTML = ""; // Limpia la lista
+        lista.innerHTML = ""; // Limpia el contenedor
+
         proyectos.forEach(proyecto => {
             const item = document.createElement("div");
-            item.textContent = proyecto.name;
+            item.classList.add("proyecto-card");
+
+            item.innerHTML = `
+                <h3>${proyecto.name}</h3>
+                <p>${proyecto.description ?? "Sin descripción disponible"}</p>
+
+                <div class="tecnologias">
+                    ${(proyecto.language)
+                        ? `<span>${proyecto.language}</span>`
+                        : ""}
+                </div>
+
+                <div class="acciones">
+                    <a href="${proyecto.html_url}" target="_blank">GitHub</a>
+                    ${proyecto.homepage 
+                        ? `<a href="${proyecto.homepage}" target="_blank">Demo</a>` 
+                        : ""}
+                </div>
+            `;
+
             lista.appendChild(item);
         });
     }
 }
+
 
 // ...existing code...
 window.addEventListener("DOMContentLoaded", async () => {

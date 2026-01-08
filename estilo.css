@@ -86,8 +86,8 @@ body {
 }
 
 #logoPrincipal{
-    height: 55px;
-    width: 55px;
+    height: 70px;
+    width: 75px;
     display: block;
     background-size: cover;
     background-position: center;
@@ -96,8 +96,8 @@ body {
 }
 
 #logoPrincipal:hover{
-    height: 55px;
-    width: 55px;
+    height: 70px;
+    width: 75px;
     display: block;
     background-size: cover;
     background-position: center;
@@ -120,6 +120,21 @@ body {
         flex-direction: column;
         gap: 14px;
     }
+
+    #logoPrincipal{
+        height: 50px;
+        width: 55px;
+    }
+
+    #logoPrincipal:hover{
+        height: 50px;
+        width: 55px;
+    }
+
+    .lis{
+        padding: 5px 8px;  /* ⬅️ AQUÍ se agranda el cuadro */
+    }
+
 }
 
 /*Galeria 3D, inicio de la pagina*/
@@ -390,5 +405,115 @@ body {
 		height: 80px;
 		width: 80px;
 	}  
+
+}
+
+/*Proyectos y repositorios en Git Hub*/
+
+.proyectos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 	50px;
+    padding: 95px 20px;
+    background-color: #080734;
+}
+
+#titulo_Proyecto{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+#contenedorProyecto{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 10px;
+    width: 100%;
+}
+
+.proyectos_GitHub{
+    display: flex;
+    flex-direction: row;
+    padding: 10 20px;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+
+/*Estilo de la carta de presentación de los proyectros*/
+.proyecto-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("img/Main/Proyectos/img5.gif"); /* ruta del gif */
+    background-size: cover;      /* cubre toda la card */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+
+    color: black;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.proyecto-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.664); /* blanco translúcido */
+    z-index: 1;
+}
+
+.proyecto-card *{
+    position: relative;
+    z-index: 2;
+}
+
+.proyecto-card:hover{
+    transform: scale(1.05);
+	transition: transform 0.5s ease;
+    filter: drop-shadow(0 0 10px rgba(155, 122, 0, 0.836));
+}
+
+
+#imgGit_hub{
+    height: 410px;
+    width: 450px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    background-color: wheat;
+    border: solid 2px blue;
+    filter: drop-shadow(0 0 10px rgba(155, 122, 0, 0.836));
+}
+
+
+@media screen and (max-width:1000px) {
+    #contenedorProyecto{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    #imgGit_hub{
+        height: 300px;
+        width: 300px;
+        
+    }   
+    .proyectos_GitHub{
+        display: flex;
+        flex-direction: column;  
+    }
 
 }
